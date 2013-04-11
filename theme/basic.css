@@ -1,0 +1,113 @@
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: lighter;
+    color: #222;
+
+    transition: opacity 1s ease;
+	-webkit-transition: opacity 1s ease;
+	-moz-transition: opacity 1s ease;
+	-o-transition: opacity 1s ease;
+	-ms-transition: opacity 1s ease;
+}
+
+body {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 3em;
+    letter-spacing: -.1ex;
+}
+
+fieldset {
+	border: none;
+}
+
+input[type="text"] {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    margin: 1em 0;
+    border: none;
+    border-bottom: 1px dotted #ddd;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-bottom: 1px dotted #666;
+}
+
+::-webkit-input-placeholder {
+    color: #acacac;
+}
+:-moz-placeholder {
+    color: #acacac;
+}
+::-moz-placeholder {
+    color: #acacac;
+}
+:-ms-input-placeholder {
+    color: #acacac;
+}
+
+label {
+    font-weight: normal;
+    color: #acacac;
+}
+
+#contactsApp {
+	width: 100%;
+    max-width: 800px;
+    min-width: 400px;
+    margin: 0 auto;
+	overflow: visible;
+}
+
+#contactsApp .contacts-view-container {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	min-height: 400px;
+	overflow: hidden;
+	clear: both;
+}
+
+.header-view, .footer-view {
+	padding: .25em 1em;
+}
+
+.header-view {
+	font-size: 18pt;
+}
+
+.contact-list-view {
+    background-color: #fafafa;
+}
+
+.contact-list-view .contact-list {
+    cursor: pointer;
+}
+
+.footer-view {
+    color: #aaa;
+	font-size: .8em;
+}
+
+.footer-view a:link,
+.footer-view a:visited,
+.footer-view a:hover,
+.footer-view a:active {
+    color: #aaa;
+}
