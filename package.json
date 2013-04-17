@@ -25,13 +25,16 @@
 			"web": "http://unscriptable.com"
 		}
 	],
-	"dependencies": {},
-	"devDependencies": {
+	"dependencies": {
 		"serv": "",
 		"bower": ""
 	},
 	"scripts": {
 		"postinstall": "bower install",
 		"start": "serv"
+	},
+	"engines" : {
+		"node": "0.8.x",
+		"npm": "1.2.x"
 	}
 }

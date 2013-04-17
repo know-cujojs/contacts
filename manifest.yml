@@ -1,0 +1,8 @@
+---
+applications:
+- name: contacts
+  memory: 128M
+  instances: 2
+  url: contacts.demo-dev.cujojs.com
+  path: .
+  command: ./node_modules/.bin/serv --public
