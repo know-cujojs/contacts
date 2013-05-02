@@ -5,4 +5,4 @@ applications:
   instances: 2
   url: contacts.demo-dev.cujojs.com
   path: .
-  command: ./node_modules/.bin/serv --public
+  command: node server.js
