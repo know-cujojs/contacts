@@ -1,7 +1,7 @@
 (function(define) {
 define(function() {
 
-	var buster, knight;
+	var buster, compareByLastFirst;
 
 	buster = require('buster');
 	compareByLastFirst = require('../../../app/list/compareByLastFirst');
