@@ -1,3 +1,4 @@
+(function(define) {
 define(function() {
 
 	/**
@@ -45,3 +46,4 @@ define(function() {
 				: 0;
 	}
 });
+}(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
