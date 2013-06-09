@@ -1,4 +1,5 @@
-define(function() {
+(function(define) {
+define([], function() {
 
 	/**
 	 * Validate a contact
@@ -23,3 +24,5 @@ define(function() {
 	}
 
 });
+}(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
+
