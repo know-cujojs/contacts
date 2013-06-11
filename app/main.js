@@ -2,11 +2,32 @@ define({
 
 	root: { $ref: 'dom!contactsApp' },
 	
-	theme: { module: 'theme/basic.css' },
+	theme: { module: 'css!theme/basic.css' },
+
+	//
+	// DATA MODEL
+	//
+	contactsCollection: { wire: 'app/collection/spec' },
+
+	//
+	// CONTROLLER
+	//
+	controller: {
+		create: 'app/controller',
+		properties: {
+			_form: { $ref: 'editView' },
+			_updateForm: { $ref: 'form.setValues' }
+		},
+		connect: {
+			'contactsCollection.onEdit': 'editContact'
+		}
+	},
 
 	//
 	// VIEWS
 	//
+	contactsContainer: { $ref: 'dom.first!.contacts-view-container', at: 'root' },
+
 	headerView: {
 		render: {
 			template: { module: 'text!app/header/template.html' },
@@ -16,16 +37,33 @@ define({
 		insert: { first: 'root' }
 	},
 
-	contactsContainer: { $ref: 'dom.first!.contacts-view-container', at: 'root' },
+	editView: {
+		render: {
+			template: { module: 'text!app/edit/template.html' },
+			replace: { module: 'i18n!app/edit/strings' },
+			css: { module: 'css!app/edit/structure.css' }
+		},
+		insert: { after: 'listView' },
+		on: {
+			submit: 'form.getValues | contactsCollection.update'
+		},
+		connect: {
+			'contactsCollection.onChange': 'reset'
+		}
+	},
 
 	listView: {
 		render: {
 			template: {module: 'text!app/list/template.html' },
-			css: { module: 'css!app/list/style.css' }
+			css: { module: 'css!app/list/structure.css' }
 		},
 		insert: { first: 'contactsContainer' },
+		on: {
+			'click:.contact': 'contactsCollection.edit',
+			'click:.remove': 'contactsCollection.remove'
+		},
 		bind: {
-			to: { $ref: 'contacts' },
+			to: { $ref: 'contactsCollection' },
 			comparator: { module: 'app/list/compareByLastFirst' },
 			bindings: {
 				firstName: '.first-name',
@@ -34,22 +72,6 @@ define({
 		}
 	},
 
-	editView: {
-		render: {
-			template: { module: 'text!app/edit/template.html' },
-			replace: { module: 'i18n!app/edit/strings' },
-			css: { module: 'css!app/edit/style.css' }
-		},
-		insert: { last: 'contactsContainer' }
-	},
-
-	editForm: {
-		element: { $ref: 'dom.first!form', at: 'editView' },
-		connect: { 
-			'contacts.onUpdate': 'reset'
-		}
-	},
-	
 	footerView: {
 		render: {
 			template: { module: 'text!app/footer/template.html' },
@@ -58,63 +80,11 @@ define({
 		},
 		insert: { last: 'root' }
 	},
-	
-	//
-	// CONTROLLER
-	//
-	controller: {
-		create: {
-			module: 'app/controller',
-			args: { $ref: 'editForm' }
-		},
-		on: {
-			editForm: {
-				'submit' : 'form.getValues | contacts.update'
-			},
-			listView: {
-				'click:.contact':'contacts.edit'
-			}
-		},
-		connect: {
-			'contacts.onEdit': 'editContact'
-		}
-	},
-	
-	//
-	// COLA
-	//
-	contacts: {
-		create: {
-			module: 'cola/Collection',
-			args: {
-				strategyOptions: {
-					validator: { module: 'app/edit/validateContact' }
-				}
-			}
-		},
-		before: {
-			add: 'cleanContact | generateMetadata',
-			update: 'cleanContact | generateMetadata'
-		}
-	},
 
-	contactStore: {
-		create: {
-			module: 'cola/adapter/LocalStorage',
-			args: 'contacts-demo'
-		},
-		bind: {
-			to: { $ref: 'contacts' }
-		}
-	},
-	
 	//
 	// HELPERS
 	//
 	form: { module: 'cola/dom/form' },
-	cleanContact: { module: 'app/contacts/cleanContact' },
-	generateMetadata: { module: 'app/contacts/generateMetadata' },
-
 
 	// Wire.js plugins
 	plugins: [

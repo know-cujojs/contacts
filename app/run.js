@@ -6,16 +6,6 @@
 			// Configure paths here
 		//},
 		packages: [
-			// Define application-level packages
-			{ name: 'welcome', location: 'app/welcome' },
-
-			// Define a theme package, and configure it to always use the css module loader
-			// No need to use AMD 'css!' plugin to load things in this package, it will happen
-			// automatigally.
-			// WARNING: The moduleLoader config syntax will be changing in an upcoming version
-			// of curl.
-			{ name: 'theme', location: 'theme', config: { moduleLoader: 'curl/plugin/css' } },
-
 			// Add third-party packages here
 			{ name: 'curl', location: 'lib/curl/src/curl' },
 			{ name: 'wire', location: 'lib/wire', main: 'wire' },

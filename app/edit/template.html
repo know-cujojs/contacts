@@ -1,13 +1,25 @@
-<div class="edit-contact-view">
-	<form id="contact-form">
-		<fieldset>
-			<input type="hidden" name="id"/>
-			<input type="text" placeholder="${label.firstName}" class="first-name" name="firstName"> <input type="text" placeholder="${label.lastName}" class="last-name" name="lastName">
-			<label><span>${label.phone}</span> <input type="text" name="phone"></label>
-			<label><span>${label.email}</span> <input type="text" name="email"></label>
-		</fieldset>
-        <fieldset class="controls">
-            <input type="submit" value="${save}"> <input type="reset" value="${clear}">
-        </fieldset>
-	</form>
-</div>
+<form class="edit-contact-view">
+    <fieldset>
+        <label>
+            <span>${firstName}</span>
+            <input type="text" class="first-name" name="firstName"/>
+        </label>
+        <label>
+            <span>${lastName}</span>
+            <input type="text" class="last-name" name="lastName"/>
+        </label>
+        <label>
+            <span>${phone}</span>
+            <input type="text" name="phone">
+        </label>
+        <label>
+            <span>${email}</span>
+            <input type="text" name="email">
+        </label>
+    </fieldset>
+    <input type="text" name="id"/>
+    <fieldset class="controls">
+        <input type="submit" value="${save}">
+        <input type="reset" value="${clear}">
+    </fieldset>
+</form>
