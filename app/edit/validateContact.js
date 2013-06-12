@@ -1,5 +1,5 @@
 (function(define) {
-define([], function() {
+define(function() {
 
 	/**
 	 * Validate a contact
