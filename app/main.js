@@ -89,11 +89,6 @@ define({
 	// Wire.js plugins
 	plugins: [
 		{ module: 'wire/dom', classes: { init: 'loading' } },
-		{ module: 'wire/dom/render' },
-		{ module: 'wire/on' },
-		{ module: 'wire/aop' },
-		{ module: 'wire/connect' },
-		{ module: 'cola' }
-		
+		'wire/dom/render', 'wire/on', 'wire/aop', 'wire/connect', 'cola'
 	]
 });
