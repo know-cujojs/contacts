@@ -1,7 +1,7 @@
-# cujo-contacts
+# cujoJS contacts sample app
 
-This is a sample app developed using [cujo.js](http://cujojs.com). It was created
-starting with the [quickstart](https://github.com/cujojs/quickstart) project.
+This is a sample app developed using [cujoJS](http://cujojs.com). It was created
+starting with [cujoJS/seed](https://github.com/cujojs/seed).
 
 ## How to get started
 
