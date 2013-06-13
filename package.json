@@ -26,11 +26,12 @@
 		}
 	],
 	"dependencies": {
-		"buster": ">=0.6",
+		"buster": "~0.6",
 		"serv": "",
 		"bower": ""
 	},
 	"scripts": {
+		"test": "buster test",
 		"postinstall": "bower install",
 		"start": "serv"
 	},
