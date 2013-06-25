@@ -2,7 +2,7 @@
 	"name": "cujoJS Contacts sample app",
 	"version": "0.2.3",
 	"dependencies": {
-		"curl": "~0.7",
+		"curl": "~0.7.4",
 		"wire": "~0.10",
 		"cola": "~0.1",
 		"when": "~2",

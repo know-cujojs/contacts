@@ -1,7 +1,7 @@
 define({
 
 	root: { $ref: 'dom!contactsApp' },
-	
+
 	theme: { module: 'css!theme/basic.css' },
 
 	//
