@@ -4,9 +4,9 @@ define(function() {
 	var buster, generateMetadata;
 
 	buster = require('buster');
-	generateMetadata = require('../../../app/contacts/generateMetadata');
+	generateMetadata = require('../../../app/collection/generateMetadata');
 
-	buster.testCase('app/contacts/generateMetadata', {
+	buster.testCase('app/collection/generateMetadata', {
 		'should add valid date-time and guid to item': function() {
 			var item = {}
 			generateMetadata(item);

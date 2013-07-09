@@ -4,9 +4,9 @@ define(function() {
 	var buster, cleanContact;
 
 	buster = require('buster');
-	cleanContact = require('../../../app/contacts/cleanContact');
+	cleanContact = require('../../../app/collection/cleanContact');
 
-	buster.testCase('app/contacts/cleanContact', {
+	buster.testCase('app/collection/cleanContact', {
 		'should trim all trailing whitespace': function() {
 			var contact, result;
 			contact = {"firstName" : "John  ", "lastName" : "Smith  ", "phone" : "614-555-5555  ", "email" : "jsmith@email.com  " };
