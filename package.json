@@ -26,9 +26,11 @@
 		}
 	],
 	"dependencies": {
-		"buster": "~0.6",
 		"serv": "",
 		"bower": ""
+	},
+	"devDependencies": {
+		"buster": "~0.6"
 	},
 	"scripts": {
 		"test": "buster test",
@@ -36,7 +38,7 @@
 		"start": "serv"
 	},
 	"engines" : {
-		"node": "0.8.x",
+		"node": "0.10.x",
 		"npm": "1.2.x"
 	}
 }

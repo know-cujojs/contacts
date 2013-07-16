@@ -1,8 +1,8 @@
 ---
 applications:
 - name: contacts
+  buildpack: https://github.com/cloudfoundry/heroku-buildpack-nodejs.git
   memory: 128M
   instances: 2
-  url: contacts.demo-dev.cujojs.com
   path: .
-  command: node server.js
+  command: serv --public
